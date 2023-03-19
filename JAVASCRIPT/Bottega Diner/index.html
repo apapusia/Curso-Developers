@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bottega Diner</title>
+    <script src=></script>
+  </head>
+  <body>
+  </body>
+
+  <script>
+    const menu=[
+    desayuno=[' 1.Croissant',' 2.Tostadas',' 3.Tortilla de patatas'],
+    almuerzoCena=[' 1.Pollo al curry',' 2.Bacalao al pil-pil',' 3.Fettuchinni carbonara'],
+    acompanamiento=[' 1.Sushi',' 2.Ensalada del chef', ' 3.Berenjenas fritas con miel',' 4.Coquetas variadas',' 5.Nachos con guacamole',' 6.Champiñones rellenos']
+  ];
+    //console.log(`Teclea el numero deseado: ${menu[0]}`)
+
+const tipoMenu=prompt('Bienvenid@s a Bottega Diner.\nTeclea el número de tu menú:\n1. Desayuno(4.50€)\n2. Almuerzo(10.99€)\n3. Cena(12.99€)')
+  switch (tipoMenu) {
+    case '1':
+      const eligeDesayuno=prompt(`Teclea el numero deseado:${menu[0]}`);
+      const desayunoElegido=(menu[0][eligeDesayuno-1]);
+      let total=4.50;
+      //incluir recomendaciones
+      alert(`Has elegido ${desayunoElegido}. Total a pagar: ${total} €`)
+      break;
+    case '2':
+      const eligeAlmuerzo=prompt(`Teclea el numero deseado:${menu[1]}`);
+      
+      break;
+    case '3':
+      const eligeCena=prompt(`Teclea el numero deseado:${menu[1]}`);
+      
+      break;  
+    default:
+      alert('Gracias por venir. Hasta la próxima')
+      break;
+  };
+    
+
+  </script>
+</html>
