@@ -14,30 +14,39 @@
     almuerzoCena=[' 1.Pollo al curry',' 2.Bacalao al pil-pil',' 3.Fettuchinni carbonara'],
     acompanamiento=[' 1.Sushi',' 2.Ensalada del chef', ' 3.Berenjenas fritas con miel',' 4.Coquetas variadas',' 5.Nachos con guacamole',' 6.Champiñones rellenos']
   ];
-    //console.log(`Teclea el numero deseado: ${menu[0]}`)
-
+    const waitressComents=['Para eso recomendamos vino blanco','Para eso recomendamos vino tinto','A nuestros clientes les encanta con la ensalada', 'Nuestro guacamole es el más fresco'];
+    var waitressComent=waitressComents[Math.floor(Math.random()*waitressComents.length)];
 const tipoMenu=prompt('Bienvenid@s a Bottega Diner.\nTeclea el número de tu menú:\n1. Desayuno(4.50€)\n2. Almuerzo(10.99€)\n3. Cena(12.99€)')
-  switch (tipoMenu) {
-    case '1':
-      const eligeDesayuno=prompt(`Teclea el numero deseado:${menu[0]}`);
-      const desayunoElegido=(menu[0][eligeDesayuno-1]);
-      let total=4.50;
-      //incluir recomendaciones
-      alert(`Has elegido ${desayunoElegido}. Total a pagar: ${total} €`)
-      break;
-    case '2':
-      const eligeAlmuerzo=prompt(`Teclea el numero deseado:${menu[1]}`);
-      
-      break;
-    case '3':
-      const eligeCena=prompt(`Teclea el numero deseado:${menu[1]}`);
-      
-      break;  
-    default:
-      alert('Gracias por venir. Hasta la próxima')
-      break;
-  };
-    
 
+
+
+function eligeAcompanamientos(total) {
+  const eligePrincipal=prompt(`Teclea el numero deseado:${menu[1]}`);
+  var principalElegido=(menu[1][eligePrincipal-1]);
+  alert(waitressComent);
+  var eligeAcompanamiento1=prompt(`Teclea el numero del primer acompañamiento:\n${menu[2]}`);
+  var eligeAcompanamiento2=prompt(`Teclea el numero del segundo acompañamiento:\n${menu[2]}`);
+  var companamientoElegido1=(menu[2][eligeAcompanamiento1-1]);
+  var companamientoElegido2=(menu[2][eligeAcompanamiento2-1]);
+  const custom=prompt('Puedes personalizar tu pedido por 2.50€ extra');
+  if (custom){
+    total+=2.50;
+  };
+  alert(`Has elegido\n-${principalElegido}\n-${companamientoElegido1}\n-${companamientoElegido2}.\n *Total a pagar: ${total} €`);
+  
+};
+
+if (tipoMenu==='1') {
+    var eligeDesayuno=prompt(`Teclea el numero deseado:${menu[0]}`);
+    var desayunoElegido=(menu[0][eligeDesayuno-1]);
+    var total=4.50;
+      alert(`Has elegido ${desayunoElegido}. Total a pagar: ${total} €`);
+  }if (tipoMenu==='2') {
+      eligeAcompanamientos(10.99);
+  } if (tipoMenu==='3') {
+    eligeAcompanamientos(12.99);
+  } else {
+    alert('Gracias por venir. Hasta la próxima');
+  }
   </script>
 </html>
